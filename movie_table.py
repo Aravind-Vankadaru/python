@@ -10,6 +10,15 @@ cursor = connection.cursor()
 cursor.execute("CREATE DATABASE videoes")
 connection = mysql.connector.connect(host='localhost',user='root',passwd='Aravind@018',database="videoes")
 cursor = connection.cursor()
+create_movie_table = """
+CREATE TABLE movie (
+ name VARCHAR(20) PRIMARY KEY,
+ actor VARCHAR(20) NOT NULL,
+ actress VARCHAR(20),
+ director VARCHAR(20),
+ yr_of_rlse DATE
+);"""
+cursor.execute(create_movie_table)
 data = """
 insert into movie values
 ('inception','leanadro','angelia','christopher-nolan','2001-12-05'),
